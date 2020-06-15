@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title%} home {%endblock title %}
+{%block homeactive %}active{%endblock homeactive%}
+{% block body %}
+<div class="container">
+         <h1 class="display-4"><strong>Welcome To NetBook</strong></h1>
+        <img width="300" height="200" class="d-block mx-auto mb-4" alt="" src="/media/blog/images/krutik1.png">
+      <p class="lead" class="blinking"><strong>"Blogging is to writing what extreme sports are to athletics:more free-form,more accident-prone,less formal,more alive,It is,in many ways,writing out loud</strong></p>
+      <hr class="my-4">
+       <p class="blinking">Here You can read all your favorite blogs related to Programming,Stories,History,Engineering,Medical and Many More.</p>
+       <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+    </div>
+
+    <footer class="container mt-3">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>© 2020-2021 NetBook.com · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    <div class="fourth">
+			<h3>our company</h3>
+			<ul>
+				<li><a href="/about">about us</a></li>
+				<li><a href="/blog/">blog</a></li>
+				<li><a href="/contact">contact</a></li>
+				<li class="icons">
+					<a href="https://instagram.com/embedded.guy?igshid=1hh60xjtr3xap" rel="me"><img width="20" height="20" alt="@write_as on Writing Exchange / Mastodon" src="/media/blog/images/fb.jpg"></a>
+					<a href="https://www.facebook.com/Embedded-Guy-111326530350442" rel="me"><img width="20" height="20" alt="@writeas__ on Twitter" src="/media/blog/images/insta.jpg"></a>
+
+				</li>
+			</ul>
+		</div>
+  </footer>
+
+{% endblock body %}

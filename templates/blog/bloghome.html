@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}blog{% endblock title%}
+{%block blogactive %}active{%endblock blogactive%}
+{% block body %}
+<h2><strong>Blogs by NetBook</strong></h2>
+{% for post in allPosts %}
+<div class="container my-4">
+
+       <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+          <h3 class="mb-0">{{post.title}}</h3>
+          <div class="card" style="width: 18rem;">
+              <div class="mb-1 text-muted">{{post.datetime}}</div>
+            <div class="col-auto d-none d-lg-block">
+
+        </div>
+          </div>
+          <p class="card-text mb-auto">{{post.content| truncatechars:10}}</p>
+          <div>
+           <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" href="#">Continue reading</a>
+          </div>
+        </div>
+
+
+</div>
+{% endfor %}
+<div class="container">
+ <div class="pagination">
+          <span class="step-links">
+            {% if allPosts.has_previous %}
+              <a href="?page={{allPosts.previous_page_number}}">previous</a>
+            {% endif %}
+            <span class="current">
+                Page {{allPosts.number }} of {{ allPosts.paginator.num_pages }}
+            </span>
+            {% if allPosts.has_next %}
+              <a href="?page={{allPosts.next_page_number }}">next</a>
+            {% endif %}
+          </span>
+      </div>
+  </div>
+{% endblock body %}
